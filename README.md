@@ -1,11 +1,25 @@
 # Un-conteneur-pour-grafana
   
- 
- on ouvre Filezzila
+## Filezzila 
+on ouvre Filezzila  et on se connecte 
+
+
+
+
+
+
+
+
 sous user1 on crée un répertoire brief
 dans brief on fait glisser notre table sql : vaccination.sql et notre fichier docker-compose.yml
 
+-Insertion de l'hôte (sftp://10.10.51.151), de l'identifiant (user1) et du mot de passe.
 
+-Insertion du chemin du dossier originel dans Site Local (C:\Users\utilisateur\Desktop\Briefs\Brief_Container_Grafana\),
+
+-Création dossier de réception sur le serveur (/home/user1/docker/country_vaccinations),
+
+-Transfert des fichiers docker-compose.yaml et country_vaccinations.sql.
 
 
 
