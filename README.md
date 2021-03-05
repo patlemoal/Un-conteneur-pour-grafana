@@ -13,20 +13,9 @@ on ouvre Filezzila  et on se connecte
 sous user1 on crée un répertoire brief
 dans brief on fait glisser notre table sql : vaccination.sql et notre fichier docker-compose.yml
 
--Insertion de l'hôte (sftp://10.10.51.151), de l'identifiant (user1) et du mot de passe.
-
--Insertion du chemin du dossier originel dans Site Local (C:\Users\utilisateur\Desktop\Briefs\Brief_Container_Grafana\),
-
--Création dossier de réception sur le serveur (/home/user1/docker/country_vaccinations),
-
--Transfert des fichiers docker-compose.yaml et country_vaccinations.sql.
 
 
-
-
-on ouvre Filezzila
-sous user1 on crée un répertoire brief
-dans brief on fait glisser notre table sql : vaccination.sql et notre fichier docker-compose.yml
+#connection au serveur
 
 on se connecte sur le serveur de l'isen
 on se connecte au serveur
@@ -80,6 +69,8 @@ on a bien nos 2 containers en mode run  :
 
 
 user1@Debian10-Virtu:~/BRIEF$ docker exec -it brief_mysql_1  bash (nom du container dans lequel on souhaite transférer notrebbd)
+
+# connection à mysql
 
 on se connecte à mysql
 root@afcfdf6045d6:/# mysql
@@ -135,9 +126,13 @@ afcfdf6045d6   mysql:5.7         "docker-entrypoint.s…"   19 hours ago        
 nos 2 containers sont les 2 derniers
 le port de gauche doit être différent pour chaque container sinon , conflit car les canaux sont les mêmes
 
+
+
+# connection à grafana
+
 sur internet on saisi l'adresse IP et notre port
 on se connecte à grafana
 identifiant :admin
 mdp : admin 
 
-et on s'amuse à faire nos graph
+![image](Graph.PNG)
