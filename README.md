@@ -11,16 +11,18 @@ on ouvre Filezzila  et on se connecte
 
 
 sous user1 on crée un répertoire brief
+
 dans brief on fait glisser notre table sql : vaccination.sql et notre fichier docker-compose.yml
+
 
 
 
 #connection au serveur
 
-on se connecte sur le serveur de l'isen
-on se connecte au serveur
-user1@10.10.51.153
-password:luigipat
+
+  on se connecte sur le serveur de l'isen
+  user1@10.10.51.153
+  password:luigipat
 
 on se place dans le répertoire brief crée dans Filezzila
 PS C:\windows\system32> cd BRIEF
@@ -130,9 +132,9 @@ le port de gauche doit être différent pour chaque container sinon , conflit ca
 
 # connection à grafana
 
-sur internet on saisi l'adresse IP et notre port
-on se connecte à grafana
-identifiant :admin
-mdp : admin 
+  sur internet on saisi l'adresse IP et notre port
+  on se connecte à grafana
+      identifiant :admin
+      mdp : admin 
 
-![image](Graph.PNG)
+![image](graph.PNG)
