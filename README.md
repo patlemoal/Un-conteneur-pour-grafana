@@ -2,7 +2,7 @@
 Mettre en place deux conteneurs (mysql et grafana) sur un serveur à distance accessible via une adresse IP.
   
 ## Filezzila 
-on ouvre Filezzila  et on se connecte 
+- on ouvre Filezzila  et on se connecte 
 
 ![image](FileZilla.PNG)
 
@@ -24,9 +24,9 @@ dans brief on fait glisser notre table sql : vaccination.sql et notre fichier do
   on se connecte sur le serveur de l'isen
   
   
-  user1@10.10.51.153
+  ```user1@10.10.51.153
   password:luigipat
-  
+  ```
 
 on se place dans le répertoire brief crée dans Filezzila
 
@@ -76,7 +76,8 @@ on verifie que tout soit vide:
 
 user1@Debian10-Virtu:~/BRIEF$ docker container ls
 
-```CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+```
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
 ```
 
@@ -85,7 +86,8 @@ on crée nos containers
 
 user1@Debian10-Virtu:~/BRIEF$ docker-compose up -d
 
-```Starting brief_mysql_1   ... done
+```
+Starting brief_mysql_1   ... done
 Creating brief_grafana_1 ... done
 ```
 
@@ -112,10 +114,12 @@ user1@Debian10-Virtu:~/BRIEF$ docker exec -it brief_mysql_1  bash (nom du contai
 
 
 on se connecte à mysql
+
 root@afcfdf6045d6:/# mysql
 
 
 root@afcfdf6045d6:/# mysql -u root -p
+
 Enter password:myRootPassword123
 
 
@@ -147,6 +151,7 @@ mysql> CREATE DATABASE myDb;
 
 
 on se connecte à notre bbd
+
 mysql> use myDb
 Database changed
 
