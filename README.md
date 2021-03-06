@@ -77,14 +77,15 @@ on verifie que tout soit vide:
 user1@Debian10-Virtu:~/BRIEF$ docker container ls
 
 ```CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
 ```
 
 
 on crée nos containers
 
-```user1@Debian10-Virtu:~/BRIEF$ docker-compose up -d
+user1@Debian10-Virtu:~/BRIEF$ docker-compose up -d
 
-Starting brief_mysql_1   ... done
+```Starting brief_mysql_1   ... done
 Creating brief_grafana_1 ... done
 ```
 
