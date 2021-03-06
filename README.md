@@ -40,8 +40,8 @@ user1@Debian10-Virtu:~/BRIEF$ docker container ls
 ```CONTAINER ID   IMAGE             COMMAND                  CREATED        STATUS        PORTS                        NAMES
 43f918645b15   grafana/grafana   "/run.sh"                17 hours ago   Up 17 hours   0.0.0.0:80->3000/tcp         brief_grafana_1
 9c1b612d9689   lavoweb/php-7.1   "docker-php-entrypoi…"   18 hours ago   Up 18 hours   80/tcp, 0.0.0.0:81->81/tcp   user1_web_1
-34b388a94732   mysql:5.5         "docker-entrypoint.s…"   18 hours ago   Up 18 hours   0.0.0.0:3306->3306/tcp       user1_db_1```
-
+34b388a94732   mysql:5.5         "docker-entrypoint.s…"   18 hours ago   Up 18 hours   0.0.0.0:3306->3306/tcp       user1_db_1
+```
 
 on arrête et supprime les containers existants pour créer ceux qui nous intéressent:
 
