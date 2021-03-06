@@ -23,6 +23,7 @@ dans brief on fait glisser notre table sql : vaccination.sql et notre fichier do
 
   on se connecte sur le serveur de l'isen
   
+  
   user1@10.10.51.153
   password:luigipat
   
@@ -75,7 +76,8 @@ on verifie que tout soit vide:
 
 user1@Debian10-Virtu:~/BRIEF$ docker container ls
 
-```CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES```
+```CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+```
 
 
 on crée nos containers
@@ -83,21 +85,27 @@ on crée nos containers
 ```user1@Debian10-Virtu:~/BRIEF$ docker-compose up -d
 
 Starting brief_mysql_1   ... done
-Creating brief_grafana_1 ... done```
+Creating brief_grafana_1 ... done
+```
 
 
 user1@Debian10-Virtu:~/BRIEF$ docker container ls
 
 ```CONTAINER ID   IMAGE             COMMAND                  CREATED          STATUS          PORTS                               NAMES
 3faf8916939e   grafana/grafana   "/run.sh"                14 minutes ago   Up 14 minutes   0.0.0.0:80->3000/tcp                brief_grafana_1
-afcfdf6045d6   mysql:5.7         "docker-entrypoint.s…"   18 hours ago     Up 14 minutes   0.0.0.0:3306->3306/tcp, 33060/tcp   brief_mysql_1```
+afcfdf6045d6   mysql:5.7         "docker-entrypoint.s…"   18 hours ago     Up 14 minutes   0.0.0.0:3306->3306/tcp, 33060/tcp   brief_mysql_1
+```
 
 on a bien nos 2 containers en mode run  :
+
 -celui de grafana dont le nom est : brief_grafana_1
+
 -celui de mysql dont le nom est : brief_mysql_1
 
 
+
 user1@Debian10-Virtu:~/BRIEF$ docker exec -it brief_mysql_1  bash (nom du container dans lequel on souhaite transférer notrebbd)
+
 
 ## Connexion à mysql
 
@@ -133,7 +141,8 @@ mysql> CREATE DATABASE myDb;
 | sys                |
 | vaccination        |
 +--------------------+
-6 rows in set (0.00 sec)```
+6 rows in set (0.00 sec)
+```
 
 
 on se connecte à notre bbd
@@ -143,18 +152,22 @@ Database changed
 
 on crée la table :
 
+
 mysql> source vaccination.sql
 
 
 
 on transfére notre bdd (en premier le nom de la bbd et ensuite le nom du container)
 
+
 user1@Debian10-Virtu:~/BRIEF$ docker cp vaccination.sql brief_mysql_1:/
 
 
 user1@Debian10-Virtu:~/BRIEF$ docker exec -it brief_mysql_1  bash
 
+
 root@afcfdf6045d6:/# mysql
+
 
 
 mysql> source vaccination.sql
@@ -166,9 +179,11 @@ CONTAINER ID   IMAGE             COMMAND                  CREATED              S
 5d367105e97f   mysql:5.7         "docker-entrypoint.s…"   About a minute ago   Up About a minute   33060/tcp, 0.0.0.0:3307->3306/tcp   mysql
 f696395d1d5c   grafana/grafana   "/run.sh"                About a minute ago   Up About a minute   3000/tcp, 0.0.0.0:81->3001/tcp      grafana
 3faf8916939e   grafana/grafana   "/run.sh"                58 minutes ago       Up 58 minutes       0.0.0.0:80->3000/tcp                brief_grafana_1
-afcfdf6045d6   mysql:5.7         "docker-entrypoint.s…"   19 hours ago         Up 58 minutes       0.0.0.0:3306->3306/tcp, 33060/tcp   brief_mysql_1```
+afcfdf6045d6   mysql:5.7         "docker-entrypoint.s…"   19 hours ago         Up 58 minutes       0.0.0.0:3306->3306/tcp, 33060/tcp   brief_mysql_1
+```
 
 nos 2 containers sont les 2 derniers
+
 
 le port de gauche doit être différent pour chaque container sinon , conflit car les canaux sont les mêmes
 
@@ -176,11 +191,15 @@ le port de gauche doit être différent pour chaque container sinon , conflit ca
 
 ## Connexion à grafana
 
+
   Soit sur docker, on va dans cli et nous sommes dirigés vers la page internet grafana
   Soit on saisi directement sur internet l'adresse IP du serveur suivi du numéro de notre port
   
   on se connecte à grafana
+  
       identifiant :admin
+      
       mdp : admin 
+      
 
 ![image](graph.PNG)
