@@ -28,7 +28,8 @@ Mettre en place deux conteneurs (mysql et grafana) sur un serveur à distance ac
   - on se connecte sur le serveur de l'isen
   
   
-  ```user1@10.10.51.153
+  ```
+  user1@10.10.51.153
   password:luigipat
   ```
 
@@ -42,7 +43,8 @@ Mettre en place deux conteneurs (mysql et grafana) sur un serveur à distance ac
         user1@Debian10-Virtu:~/BRIEF$ docker container ls
 
 
-```CONTAINER ID   IMAGE             COMMAND                  CREATED        STATUS        PORTS                        NAMES
+```
+CONTAINER ID   IMAGE             COMMAND                  CREATED        STATUS        PORTS                        NAMES
 43f918645b15   grafana/grafana   "/run.sh"                17 hours ago   Up 17 hours   0.0.0.0:80->3000/tcp         brief_grafana_1
 9c1b612d9689   lavoweb/php-7.1   "docker-php-entrypoi…"   18 hours ago   Up 18 hours   80/tcp, 0.0.0.0:81->81/tcp   user1_web_1
 34b388a94732   mysql:5.5         "docker-entrypoint.s…"   18 hours ago   Up 18 hours   0.0.0.0:3306->3306/tcp       user1_db_1
@@ -77,7 +79,8 @@ Mettre en place deux conteneurs (mysql et grafana) sur un serveur à distance ac
             user1_db_1
 
 
-  - on verifie que le containers sont vides:
+  - on verifie que les containers sont vides:
+  
 
       user1@Debian10-Virtu:~/BRIEF$ docker container ls
 
@@ -91,13 +94,16 @@ Mettre en place deux conteneurs (mysql et grafana) sur un serveur à distance ac
 
           user1@Debian10-Virtu:~/BRIEF$ docker-compose up -d
 
+
           ```
           Starting brief_mysql_1   ... done
           Creating brief_grafana_1 ... done
           ```
 
   - on vérifie la création 
+  
       user1@Debian10-Virtu:~/BRIEF$ docker container ls
+      
 
         ```CONTAINER ID   IMAGE             COMMAND                  CREATED          STATUS          PORTS                               NAMES
         3faf8916939e   grafana/grafana   "/run.sh"                14 minutes ago   Up 14 minutes   0.0.0.0:80->3000/tcp                brief_grafana_1
@@ -124,7 +130,8 @@ Mettre en place deux conteneurs (mysql et grafana) sur un serveur à distance ac
 
     user1@Debian10-Virtu:~/BRIEF$ docker ps
 
-```CONTAINER ID   IMAGE             COMMAND                  CREATED              STATUS              PORTS                               NAMES
+```
+CONTAINER ID   IMAGE             COMMAND                  CREATED              STATUS              PORTS                               NAMES
 5d367105e97f   mysql:5.7         "docker-entrypoint.s…"   About a minute ago   Up About a minute   33060/tcp, 0.0.0.0:3307->3306/tcp   mysql
 f696395d1d5c   grafana/grafana   "/run.sh"                About a minute ago   Up About a minute   3000/tcp, 0.0.0.0:81->3001/tcp      grafana
 3faf8916939e   grafana/grafana   "/run.sh"                58 minutes ago       Up 58 minutes       0.0.0.0:80->3000/tcp                brief_grafana_1
@@ -143,11 +150,14 @@ afcfdf6045d6   mysql:5.7         "docker-entrypoint.s…"   19 hours ago        
 
 
   -   on se connecte à mysql
+  
 
         root@afcfdf6045d6:/# mysql
+        
 
 
         root@afcfdf6045d6:/# mysql -u root -p
+        
 
         Enter password:myRootPassword123 (celui que nous avons indiqué dans le compose_docker)
 
@@ -207,6 +217,7 @@ afcfdf6045d6   mysql:5.7         "docker-entrypoint.s…"   19 hours ago        
   Soit on saisi directement sur internet l'adresse IP du serveur suivi du numéro de notre port
   
   on se connecte à grafana
+  
   
       identifiant :admin
       
