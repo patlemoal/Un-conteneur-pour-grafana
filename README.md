@@ -18,7 +18,7 @@ dans brief on fait glisser notre table sql : vaccination.sql et notre fichier do
 
 
 
-# connexion au serveur
+## Connexion au serveur
 
 
   on se connecte sur le serveur de l'isen
@@ -98,7 +98,7 @@ on a bien nos 2 containers en mode run  :
 
 user1@Debian10-Virtu:~/BRIEF$ docker exec -it brief_mysql_1  bash (nom du container dans lequel on souhaite transférer notrebbd)
 
-# connexion à mysql
+## Connexion à mysql
 
 
 on se connecte à mysql
@@ -116,7 +116,7 @@ Server version: 5.7.33 MySQL Community Server (GPL)
 Copyright (c) 2000, 2021, Oracle and/or its affiliates.
 
 
-# Création de la base de données:
+## Création de la base de données:
 
 mysql> CREATE DATABASE myDb;
 
@@ -173,9 +173,10 @@ le port de gauche doit être différent pour chaque container sinon , conflit ca
 
 
 
-# connexion à grafana
+## Connexion à grafana
 
-  sur internet on saisi l'adresse IP et notre port
+  Soit sur docker, on va dans cli et nous sommes dirigés vers la page internet grafana
+  Soit on saisi directement sur internet l'adresse IP du serveur suivi du numéro de notre port
   
   on se connecte à grafana
       identifiant :admin
