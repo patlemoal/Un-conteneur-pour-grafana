@@ -1,5 +1,5 @@
 # Un-conteneur-pour-grafana
-but est de pouvoir mettre en place deux conteneurs (mysql et grafana) sur un serveur à distance accessible via une adresse IP.
+Mettre en place deux conteneurs (mysql et grafana) sur un serveur à distance accessible via une adresse IP.
   
 ## Filezzila 
 on ouvre Filezzila  et on se connecte 
