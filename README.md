@@ -98,7 +98,7 @@ CONTAINER ID   IMAGE             COMMAND                  CREATED        STATUS 
   -  Installation de docker-compose sur le serveur (sudo apt install docker-compose),
 
 
-![image](dockercompose.PNG)
+  ![image](dockercompose.PNG)
     
 
   - Montage du docker-compose.yaml (docker-compose up -d) qui contient :
