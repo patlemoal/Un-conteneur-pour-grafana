@@ -150,7 +150,7 @@ afcfdf6045d6   mysql:5.7         "docker-entrypoint.s…"   19 hours ago        
 
           le port de gauche doit être différent pour chaque container sinon , conflit car les canaux sont les mêmes
 
-    -Ouverture sur le navigateur de l'adresse IP du serveur suivi du port Grafana (http://10.10.51.153:3000),
+
 
 
 ## Connexion à mysql
@@ -221,6 +221,7 @@ afcfdf6045d6   mysql:5.7         "docker-entrypoint.s…"   19 hours ago        
 
 
   Soit sur docker, on va dans cli et nous sommes dirigés vers la page internet grafana
+  
   Soit on saisi directement sur internet l'adresse IP du serveur suivi du port Grafana (http://10.10.51.153:3000),
   
   on se connecte à grafana
