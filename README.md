@@ -1,7 +1,9 @@
 # Un-conteneur-pour-grafana
+
 Mettre en place deux conteneurs (mysql et grafana) sur un serveur à distance accessible via une adresse IP.
   
 ## Filezzila 
+
 - on ouvre Filezzila  et on se connecte 
 
 ![image](FileZilla.PNG)
@@ -11,7 +13,7 @@ Mettre en place deux conteneurs (mysql et grafana) sur un serveur à distance ac
 
 
 
-  - sous user1 on crée un répertoire brief
+- sous user1 on crée un répertoire brief
 
         dans brief on fait glisser : 
         
@@ -50,7 +52,7 @@ CONTAINER ID   IMAGE             COMMAND                  CREATED        STATUS 
 34b388a94732   mysql:5.5         "docker-entrypoint.s…"   18 hours ago   Up 18 hours   0.0.0.0:3306->3306/tcp       user1_db_1
 ```
 
-  - au beosoin, on arrête et supprime les containers existants pour créer ceux qui nous intéressent:
+  - au besoin, on arrête et supprime les containers existants pour créer ceux qui nous intéressent:
 
             user1@Debian10-Virtu:~/BRIEF$ docker stop brief_grafana_1
 
@@ -93,13 +95,13 @@ CONTAINER ID   IMAGE             COMMAND                  CREATED        STATUS 
  ## Ubuntu - Montage du Docker :
  
  
--  Installation de docker-compose sur le serveur (sudo apt install docker-compose),
+  -  Installation de docker-compose sur le serveur (sudo apt install docker-compose),
 
-![image](docker-compose.PNG)
+    ![image](docker-compose.PNG)
 
- - Montage du docker-compose.yaml (docker-compose up -d) qui contient :
+  - Montage du docker-compose.yaml (docker-compose up -d) qui contient :
 
-- on crée nos containers
+   - on crée nos containers
 
           user1@Debian10-Virtu:~/BRIEF$ docker-compose up -d
 
