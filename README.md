@@ -22,14 +22,14 @@ Mettre en place deux conteneurs (mysql et grafana) sur un serveur à distance ac
 
 
 
-## Connexion au serveur
+## Ubuntu - Connexion au serveur Linux :
 
 
   - on se connecte sur le serveur de l'isen
   
   
   ```
-  user1@10.10.51.153
+  ssh user1@10.10.51.153
   password:luigipat
   ```
 
@@ -50,7 +50,7 @@ CONTAINER ID   IMAGE             COMMAND                  CREATED        STATUS 
 34b388a94732   mysql:5.5         "docker-entrypoint.s…"   18 hours ago   Up 18 hours   0.0.0.0:3306->3306/tcp       user1_db_1
 ```
 
-  - on arrête et supprime les containers existants pour créer ceux qui nous intéressent:
+  - au beosoin, on arrête et supprime les containers existants pour créer ceux qui nous intéressent:
 
             user1@Debian10-Virtu:~/BRIEF$ docker stop brief_grafana_1
 
@@ -88,9 +88,16 @@ CONTAINER ID   IMAGE             COMMAND                  CREATED        STATUS 
       CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 
       ```
+      
+      
+ ## Ubuntu - Montage du Docker :
+ 
+ 
+-  Installation de docker-compose sur le serveur (sudo apt install docker-compose),
 
+ - Montage du docker-compose.yaml (docker-compose up -d) qui contient :
 
-  - on crée nos containers
+- on crée nos containers
 
           user1@Debian10-Virtu:~/BRIEF$ docker-compose up -d
 
@@ -143,7 +150,7 @@ afcfdf6045d6   mysql:5.7         "docker-entrypoint.s…"   19 hours ago        
 
           le port de gauche doit être différent pour chaque container sinon , conflit car les canaux sont les mêmes
 
-    
+    -Ouverture sur le navigateur de l'adresse IP du serveur suivi du port Grafana (http://10.10.51.153:3000),
 
 
 ## Connexion à mysql
@@ -214,7 +221,7 @@ afcfdf6045d6   mysql:5.7         "docker-entrypoint.s…"   19 hours ago        
 
 
   Soit sur docker, on va dans cli et nous sommes dirigés vers la page internet grafana
-  Soit on saisi directement sur internet l'adresse IP du serveur suivi du numéro de notre port
+  Soit on saisi directement sur internet l'adresse IP du serveur suivi du port Grafana (http://10.10.51.153:3000),
   
   on se connecte à grafana
   
